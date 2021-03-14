@@ -13,7 +13,7 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
   return (
     <Box>
       <Typography>{problem.name}</Typography>
-      <Chip label={problem.group.tag} />
+      <Chip label={problem.group ? problem.group.tag : 'Other'} />
 
       <Box className={styles.solutionsBox}>
         {solutions.map((solution: string) => (
