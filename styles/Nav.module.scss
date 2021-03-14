@@ -1,0 +1,73 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px
+}
+
+.title {
+  font-family: roboto;
+  font-weight: bold;
+  color: #282828
+}
+
+.leftBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.linksBox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logoBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logoAnchor {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  align-items: center;
+}
+
+.rightBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.actionButton {
+  background-color: transparent
+}
+
+.actionIcon {
+  color: #bdbdbd
+}
+
+.linkBox {
+  margin: 0px 5px
+}
+
+.linkAnchor {
+  text-decoration: none;
+}
+
+.linkText {
+  color: #424242;
+  font-family: roboto;
+  font-weight: bold;
+}
+
+.userAvatar {
+  border-radius: 50%
+}
