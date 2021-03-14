@@ -1,9 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
-import Adapters from 'next-auth/adapters';
 import { Account, Session, Token, User } from '../../../types';
-import UserModel from './models/User';
 
 const options = {
   providers: [
