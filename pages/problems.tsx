@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Chip, Paper, Typography } from '@material-ui/core';
 import Link from 'next/link';
 import axios from 'axios';
-import styles from '../styles/Problems.module.scss';
+import styles from '../styles/problems.module.scss';
 import { Problem } from '../types';
 
 export default function Problems({ problems }) {
