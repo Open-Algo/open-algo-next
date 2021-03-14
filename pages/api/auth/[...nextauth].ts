@@ -19,13 +19,13 @@ const options = {
   },
   debug: true,
   callbacks: {
-    session: async (session: Session, user: User) => {
+    session: async (session, user) => {
       session.jwt = user.jwt;
       session.id = user.id;
 
       return Promise.resolve(session);
     },
-    jwt: async (token: Token, user: User, account: Account) => {
+    jwt: async (token, user, account) => {
       const isSignedIn = user ? true : false;
 
       if (isSignedIn) {
