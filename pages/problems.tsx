@@ -27,7 +27,9 @@ export default function Problems({ problems }) {
                 <Typography variant="h6">{type}</Typography>
                 {problems.map((problem) => (
                   <Paper style={{ margin: 5, padding: 5, width: 150 }}>
-                    <Link href={`/problems/${problem.id}`}>
+                    <Link
+                      href={`${process.env.NEXT_PUBLIC_URL}/problems/${problem.id}`}
+                    >
                       <a style={{ textDecoration: 'none' }}>
                         <Typography
                           variant="body2"
