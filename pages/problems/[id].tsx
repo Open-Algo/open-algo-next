@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core';
 import {
   faExternalLinkAlt,
-  faCheckSquare,
+  faCheckCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -38,6 +38,10 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
     setValue(newValue);
   };
 
+  const handleMarkCompleted = () => {
+    console.log('Mark completed!');
+  };
+
   return (
     <Box className={styles['root']}>
       <Box style={{ margin: 15 }}>
@@ -54,6 +58,14 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
               icon={faExternalLinkAlt}
               size="lg"
               style={{ color: '#1B91DA' }}
+            />
+          </Button>
+
+          <Button onClick={handleMarkCompleted}>
+            <FontAwesomeIcon
+              icon={faCheckCircle}
+              size="lg"
+              style={{ color: '#3CD75F' }}
             />
           </Button>
         </Box>
