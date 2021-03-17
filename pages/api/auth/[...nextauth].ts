@@ -19,6 +19,10 @@ const options = {
   },
   debug: true,
   callbacks: {
+    redirect: async () => {
+      return '/';
+    },
+
     session: async (session, user) => {
       session.jwt = user.jwt;
       session.id = user.id;
