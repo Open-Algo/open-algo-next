@@ -1,11 +1,10 @@
 import { GetServerSideProps } from 'next';
 import { getSession } from 'next-auth/client';
 import { Box, Typography } from '@material-ui/core';
-import styles from '../styles/home.module.scss';
 
 export default function Home({ session }) {
   return (
-    <Box className={styles.root}>
+    <Box>
       <Typography variant="h4" style={{ fontWeight: 'bold' }}>
         {session ? `Hey, ${session.user.name}!` : 'Hey!'}
       </Typography>
