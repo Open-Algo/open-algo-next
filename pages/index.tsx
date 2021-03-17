@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import { getSession } from 'next-auth/client';
 import { Box, Typography } from '@material-ui/core';
-import styles from '../styles/Home.module.scss';
+import styles from '../styles/home.module.scss';
 
 export default function Home({ session }) {
   return (
