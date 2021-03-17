@@ -3,11 +3,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useSession, signIn, signOut } from 'next-auth/client';
 import { Box, Button, Popover, Typography } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import { faBell, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../../styles/Nav.module.scss';
 
 export default function Nav() {
+  const theme = useTheme();
+
   const [session, loading] = useSession();
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -35,7 +38,10 @@ export default function Nav() {
                 <Typography
                   variant="h6"
                   className={styles.title}
-                  style={{ fontWeight: 'bold', color: '#1B91DA' }}
+                  style={{
+                    fontWeight: 'bold',
+                    color: theme.palette.primary.main,
+                  }}
                 >
                   Open Algo
                 </Typography>

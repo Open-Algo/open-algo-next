@@ -6,10 +6,10 @@ const theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: {
-      main: '#556cd6',
+      main: '#1B91DA',
     },
     secondary: {
-      main: '#19857b',
+      main: '#8899A6',
     },
     error: {
       main: red.A400,
@@ -17,10 +17,39 @@ const theme = createMuiTheme({
     background: {
       default: '#15202B',
     },
-    card: {
-      default: '#192734',
+    info: {
+      main: '#192734',
+      light: '#22303c',
     },
   },
 });
 
 export default theme;
+
+// export interface Palette {
+//   common: CommonColors;
+//   type: PaletteType;
+//   contrastThreshold: number;
+//   tonalOffset: PaletteTonalOffset;
+//   primary: PaletteColor;
+//   secondary: PaletteColor;
+//   error: PaletteColor;
+//   warning: PaletteColor;
+//   info: PaletteColor;
+//   success: PaletteColor;
+//   grey: Color;
+//   text: TypeText;
+//   divider: TypeDivider;
+//   action: TypeAction;
+//   background: TypeBackground;
+//   getContrastText: (background: string) => string;
+//   augmentColor: {
+//     (
+//       color: ColorPartial,
+//       mainShade?: number | string,
+//       lightShade?: number | string,
+//       darkShade?: number | string
+//     ): PaletteColor;
+//     (color: PaletteColorOptions): PaletteColor;
+//   };
+// }

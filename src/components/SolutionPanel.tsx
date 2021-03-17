@@ -30,13 +30,13 @@ export default function SolutionPanel({ solution }: { solution: Solution }) {
   return (
     <Box>
       <Accordion
-        style={{ backgroundColor: theme.palette.card.default }}
+        style={{ backgroundColor: theme.palette.info.main }}
         defaultExpanded={true}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography
             variant="body1"
-            style={{ fontWeight: 'bold', color: '#8899A6' }}
+            style={{ fontWeight: 'bold', color: theme.palette.secondary.main }}
           >
             Approach
           </Typography>
@@ -47,13 +47,13 @@ export default function SolutionPanel({ solution }: { solution: Solution }) {
       </Accordion>
 
       <Accordion
-        style={{ backgroundColor: theme.palette.card.default }}
+        style={{ backgroundColor: theme.palette.info.main }}
         defaultExpanded={true}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography
             variant="body1"
-            style={{ fontWeight: 'bold', color: '#8899A6' }}
+            style={{ fontWeight: 'bold', color: theme.palette.secondary.main }}
           >
             Analysis
           </Typography>
@@ -66,7 +66,7 @@ export default function SolutionPanel({ solution }: { solution: Solution }) {
               </Typography>
               <Chip
                 label={timeComplexityIds[solution.time_complexity]}
-                style={{ backgroundColor: '#22303c' }}
+                style={{ backgroundColor: theme.palette.info.light }}
               />
             </Box>
             <Box style={{ margin: 2 }}>
@@ -75,18 +75,18 @@ export default function SolutionPanel({ solution }: { solution: Solution }) {
               </Typography>
               <Chip
                 label={spaceComplexityIds[solution.space_complexity]}
-                style={{ backgroundColor: '#22303c' }}
+                style={{ backgroundColor: theme.palette.info.light }}
               />
             </Box>
           </Box>
         </AccordionDetails>
       </Accordion>
 
-      <Accordion style={{ backgroundColor: theme.palette.card.default }}>
+      <Accordion style={{ backgroundColor: theme.palette.info.main }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography
             variant="body1"
-            style={{ fontWeight: 'bold', color: '#8899A6' }}
+            style={{ fontWeight: 'bold', color: theme.palette.secondary.main }}
           >
             Code
           </Typography>
@@ -99,13 +99,13 @@ export default function SolutionPanel({ solution }: { solution: Solution }) {
       </Accordion>
 
       <Accordion
-        style={{ backgroundColor: theme.palette.card.default }}
+        style={{ backgroundColor: theme.palette.info.main }}
         defaultExpanded={true}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography
             variant="body1"
-            style={{ fontWeight: 'bold', color: '#8899A6' }}
+            style={{ fontWeight: 'bold', color: theme.palette.secondary.main }}
           >
             Learn
           </Typography>

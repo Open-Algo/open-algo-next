@@ -30,12 +30,12 @@ export default function Problems({ problems }) {
                 style={{
                   margin: 5,
                   padding: 20,
-                  backgroundColor: theme.palette.card.default,
+                  backgroundColor: theme.palette.info.main,
                 }}
               >
                 <Box
                   style={{
-                    backgroundColor: '#22303c',
+                    backgroundColor: theme.palette.info.light,
                     marginBottom: 10,
                     padding: 5,
                   }}
@@ -46,7 +46,7 @@ export default function Problems({ problems }) {
                       textAlign: 'center',
                       fontWeight: 'bold',
                       fontFamily: 'roboto',
-                      color: '#8899A6',
+                      color: theme.palette.secondary.main,
                     }}
                   >
                     {type}
