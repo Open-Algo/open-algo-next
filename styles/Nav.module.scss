@@ -3,13 +3,14 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 100px
+  height: 100px;
+  padding: 10px;
 }
 
 .title {
   font-family: roboto;
   font-weight: bold;
-  color: #282828
+  color: #fff
 }
 
 .leftBox {
@@ -51,7 +52,7 @@
 }
 
 .actionIcon {
-  color: #bdbdbd
+  color: #fff
 }
 
 .linkBox {
@@ -63,9 +64,7 @@
 }
 
 .linkText {
-  color: #424242;
-  font-family: roboto;
-  font-weight: bold;
+  color: #8899A6;
 }
 
 .userAvatar {
