@@ -1,23 +1,20 @@
-import React, {ReactNode} from 'react';
-import Nav from './Nav'
-import styles from '../../styles/Layout.module.scss'
+import React, { ReactNode } from 'react';
+import Nav from './Nav';
+import styles from '../../styles/Layout.module.scss';
 
 interface Children {
-  children: ReactNode
+  children: ReactNode;
 }
 
 const Layout = ({ children }: Children) => {
   return (
     <>
-      <Nav/>
-      <div className={styles.container}>
-        <main className={styles.main}>
-
-          {children}
-        </main>
+      <Nav />
+      <div className={styles.root}>
+        <main className={styles.main}>{children}</main>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
