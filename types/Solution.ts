@@ -1,9 +1,11 @@
-import Tag from './Tag';
-
 export default interface Solution {
-  complexities: object[];
-  tags: Tag[];
+  title: string;
+  time_complexity: string;
+  space_complexity: string;
+  tags: string[];
   solution: string;
   id: string;
   problem: string;
+  packages: string[];
+  explanation: string;
 }
