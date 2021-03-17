@@ -1,11 +1,14 @@
 import React from 'react';
 import { Box, Chip, Paper, Typography } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import Link from 'next/link';
 import axios from 'axios';
 import styles from '../styles/problems.module.scss';
 import { Problem } from '../types';
 
 export default function Problems({ problems }) {
+  const theme = useTheme();
+
   return (
     <Box className={styles.root}>
       <Box>
@@ -23,15 +26,51 @@ export default function Problems({ problems }) {
               ([type, problems]: [string, Problem[]]) => problems.length > 0
             )
             .map(([type, problems]: [string, Problem[]]) => (
-              <Paper style={{ margin: 5, padding: 20 }}>
-                <Typography variant="h6">{type}</Typography>
+              <Paper
+                style={{
+                  margin: 5,
+                  padding: 20,
+                  backgroundColor: theme.palette.card.default,
+                }}
+              >
+                <Box
+                  style={{
+                    backgroundColor: '#22303c',
+                    marginBottom: 10,
+                    padding: 5,
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    style={{
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      fontFamily: 'roboto',
+                      color: '#8899A6',
+                    }}
+                  >
+                    {type}
+                  </Typography>
+                </Box>
                 {problems.map((problem) => (
-                  <Paper style={{ margin: 5, padding: 5, width: 150 }}>
+                  <Paper
+                    style={{
+                      margin: 5,
+                      padding: 7,
+                      width: 220,
+                      backgroundColor: theme.palette.background.default,
+                    }}
+                  >
                     <Link href={`/problems/${problem.id}`}>
                       <a style={{ textDecoration: 'none' }}>
                         <Typography
                           variant="body2"
                           className={styles.problemName}
+                          style={{
+                            color: '#fff',
+                            fontFamily: 'roboto',
+                            fontWeight: 'bold',
+                          }}
                         >
                           {problem.name}
                         </Typography>
