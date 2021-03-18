@@ -1,18 +1,60 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import axios from 'axios';
 import { useSession, signIn, signOut } from 'next-auth/client';
 import { Box, Button, Popover, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import { faBell, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { useUser } from '../context/UserContext';
 import styles from '../../styles/Nav.module.scss';
+
+const getUser = async (email: string) => {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337';
+  try {
+    const data = await axios.post(`${API_URL}/graphql`, {
+      query: `query GET_USER ($email: String!) {
+        users(where: {email:$email}){
+          id
+          email
+          username
+          problems {
+            id
+          }
+          problemsByDifficulty
+          problemsByGroup
+        }
+      }`,
+      variables: {
+        email,
+      },
+    });
+
+    return data.data.data.users[0];
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 export default function Nav() {
   const theme = useTheme();
+  const { dispatch, state } = useUser();
 
   const [session, loading] = useSession();
   const [anchorEl, setAnchorEl] = useState(null);
+
+  useEffect(() => {
+    if (session) {
+      const setUser = async () => {
+        const user = await getUser(session.user.email);
+        dispatch({ type: 'update', user });
+      };
+
+      setUser();
+    }
+  }, [session]);
 
   const handleOpenPopover = (e: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(e.currentTarget);
