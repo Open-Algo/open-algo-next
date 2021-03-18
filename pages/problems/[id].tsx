@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   AppBar,
   Box,
@@ -9,7 +9,6 @@ import {
   Typography,
 } from '@material-ui/core';
 import { useMutation, gql } from '@apollo/client';
-import { useSession } from 'next-auth/client';
 import {
   faExternalLinkAlt,
   faCheckCircle,
@@ -17,10 +16,12 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTheme } from '@material-ui/core/styles';
 
+import { useUser } from '../../src/context/UserContext';
+
 import SolutionPanel from '../../src/components/SolutionPanel';
 import { User, Solution, Problem as ProblemInterface } from '../../types';
 import TabPanel from '../../src/components/TabPanel';
-import { toTitleCase } from '../../src/helpers';
+import { isProblemSolved, toTitleCase } from '../../src/helpers';
 import styles from '../../styles/problem.module.scss';
 
 const ADD_PROBLEM = gql`
@@ -49,18 +50,13 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
   const theme = useTheme();
 
   const [value, setValue] = useState(0);
-  const [session, loading] = useSession();
+
+  const { state, dispatch } = useUser();
 
   const [addProblem] = useMutation<{ addProblem: User }>(ADD_PROBLEM, {
     onCompleted({ addProblem }) {
-      const {
-        id,
-        email,
-        problems,
-        problemsByDifficulty,
-        problemsByGroup,
-        username,
-      } = addProblem;
+      const user = addProblem;
+      dispatch({ type: 'update', user });
     },
   });
 
@@ -69,9 +65,9 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
   };
 
   const handleAddProblem = () => {
-    if (session) {
+    if (state.user.id) {
       addProblem({
-        variables: { email: session.user.email, problemId: problem.id },
+        variables: { email: state.user.email, problemId: problem.id },
       });
     }
   };
@@ -99,7 +95,11 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
             <FontAwesomeIcon
               icon={faCheckCircle}
               size="lg"
-              style={{ color: '#3CD75F' }}
+              style={{
+                color: isProblemSolved({ user: state.user, problem })
+                  ? '#3CD75F'
+                  : theme.palette.info.light,
+              }}
             />
           </Button>
         </Box>
