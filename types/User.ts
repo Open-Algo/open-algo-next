@@ -1,6 +1,6 @@
 export default interface User {
   jwt: string;
-  id: number;
+  id: string;
   username: string;
   email: string;
   problems: {}[];
