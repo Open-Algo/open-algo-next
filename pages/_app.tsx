@@ -6,11 +6,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ApolloProvider } from '@apollo/client';
 import { Provider as AuthProvider } from 'next-auth/client';
 
+import { UserProvider, useUser } from '../src/context/UserContext';
 import { useApollo } from '../lib/apollo';
 import Layout from '../src/components/Layout';
 import theme from '../src/theme';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   const apolloClient = useApollo(pageProps.initialApolloState);
 
   useEffect(() => {
@@ -33,15 +34,17 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ApolloProvider client={apolloClient}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Layout>
-            <AuthProvider session={pageProps.session}>
-              <Component {...pageProps} />
-            </AuthProvider>
-          </Layout>
+          <UserProvider>
+            <Layout>
+              <AuthProvider session={pageProps.session}>
+                <Component {...pageProps} />
+              </AuthProvider>
+            </Layout>
+          </UserProvider>
         </ThemeProvider>
       </ApolloProvider>
     </>
   );
 }
 
-export default MyApp;
+export default App;
