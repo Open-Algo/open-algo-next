@@ -9,6 +9,7 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: '#8899A6',
+      light: '#FFFFFF',
     },
     error: {
       main: red.A400,
@@ -18,7 +19,10 @@ const theme = createMuiTheme({
     },
     info: {
       main: '#192734',
-      light: '#22303c',
+      light: '#22303C',
+    },
+    success: {
+      main: '#3CD75F',
     },
   },
 });

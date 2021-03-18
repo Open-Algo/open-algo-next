@@ -78,7 +78,7 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
         <Box style={{ display: 'flex', flexDirection: 'row' }}>
           <Typography
             variant="h3"
-            style={{ color: '#fff', fontWeight: 'bold' }}
+            style={{ color: theme.palette.secondary.light, fontWeight: 'bold' }}
           >
             {problem.name}
           </Typography>
@@ -87,7 +87,7 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
             <FontAwesomeIcon
               icon={faExternalLinkAlt}
               size="lg"
-              style={{ color: '#1B91DA' }}
+              style={{ color: theme.palette.primary.main }}
             />
           </Button>
 
@@ -97,7 +97,7 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
               size="lg"
               style={{
                 color: isProblemSolved({ user: state.user, problem })
-                  ? '#3CD75F'
+                  ? theme.palette.success.main
                   : theme.palette.info.light,
               }}
             />
@@ -106,12 +106,12 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
 
         <Chip
           label={problem.group ? problem.group.tag : 'Other'}
-          style={{ backgroundColor: '#1B91DA', margin: 2 }}
+          style={{ backgroundColor: theme.palette.primary.main, margin: 2 }}
         />
 
         <Chip
           label={problem.difficulty ? toTitleCase(problem.difficulty) : 'Other'}
-          style={{ backgroundColor: '#1B91DA', margin: 2 }}
+          style={{ backgroundColor: theme.palette.primary.main, margin: 2 }}
         />
       </Box>
 
@@ -125,12 +125,19 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
         <Tabs
           value={value}
           onChange={handleChange}
-          TabIndicatorProps={{ style: { background: '#1B91DA' } }}
+          TabIndicatorProps={{
+            style: { background: theme.palette.primary.main },
+          }}
         >
           {problem.solutions.map((solution: Solution, idx: number) => (
             <Tab
               label={
-                <Typography style={{ color: '#1B91DA', fontWeight: 'bold' }}>
+                <Typography
+                  style={{
+                    color: theme.palette.primary.main,
+                    fontWeight: 'bold',
+                  }}
+                >
                   {solution.title}
                 </Typography>
               }
