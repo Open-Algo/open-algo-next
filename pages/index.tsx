@@ -1,13 +1,26 @@
 import { GetServerSideProps } from 'next';
 import { getSession } from 'next-auth/client';
-import { Box, Typography } from '@material-ui/core';
+import { Box } from '@material-ui/core';
+import RadarChart from '../src/components/RadarChart';
+
+import { useUser } from '../src/context/UserContext';
 
 export default function Home({ session }) {
+  const { state } = useUser();
+
   return (
-    <Box>
-      <Typography variant="h4" style={{ fontWeight: 'bold' }}>
-        {session ? `Hey, ${session.user.name}!` : 'Hey!'}
-      </Typography>
+    <Box
+      style={{
+        height: 'calc(100vh - 100px)',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Box style={{ width: 650, height: 650 }}>
+        <RadarChart user={state.user} />
+      </Box>
     </Box>
   );
 }
