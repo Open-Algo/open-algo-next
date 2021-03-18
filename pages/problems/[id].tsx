@@ -8,19 +8,35 @@ import {
   Tabs,
   Typography,
 } from '@material-ui/core';
+import { useMutation, gql } from '@apollo/client';
+import { useSession } from 'next-auth/client';
 import {
   faExternalLinkAlt,
   faCheckCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { useTheme } from '@material-ui/core/styles';
-import Image from 'next/image';
+
 import SolutionPanel from '../../src/components/SolutionPanel';
-import { Solution, Problem as ProblemInterface } from '../../types';
+import { User, Solution, Problem as ProblemInterface } from '../../types';
 import TabPanel from '../../src/components/TabPanel';
 import { toTitleCase } from '../../src/helpers';
 import styles from '../../styles/problem.module.scss';
+
+const ADD_PROBLEM = gql`
+  mutation addProblem($email: String!, $problemId: ID!) {
+    addProblem(email: $email, problemId: $problemId) {
+      id
+      email
+      username
+      problems {
+        id
+      }
+      problemsByDifficulty
+      problemsByGroup
+    }
+  }
+`;
 
 function a11yProps(index: any) {
   return {
@@ -30,16 +46,34 @@ function a11yProps(index: any) {
 }
 
 export default function Problem({ problem }: { problem: ProblemInterface }) {
-  const [value, setValue] = useState(0);
-
   const theme = useTheme();
+
+  const [value, setValue] = useState(0);
+  const [session, loading] = useSession();
+
+  const [addProblem] = useMutation<{ addProblem: User }>(ADD_PROBLEM, {
+    onCompleted({ addProblem }) {
+      const {
+        id,
+        email,
+        problems,
+        problemsByDifficulty,
+        problemsByGroup,
+        username,
+      } = addProblem;
+    },
+  });
 
   const handleChange = (e: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
 
-  const handleMarkCompleted = () => {
-    console.log('Mark completed!');
+  const handleAddProblem = () => {
+    if (session) {
+      addProblem({
+        variables: { email: session.user.email, problemId: problem.id },
+      });
+    }
   };
 
   return (
@@ -61,7 +95,7 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
             />
           </Button>
 
-          <Button onClick={handleMarkCompleted}>
+          <Button onClick={handleAddProblem}>
             <FontAwesomeIcon
               icon={faCheckCircle}
               size="lg"
