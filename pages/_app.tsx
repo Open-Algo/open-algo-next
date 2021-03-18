@@ -4,6 +4,7 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ApolloProvider } from '@apollo/client';
+import { Provider as AuthProvider } from 'next-auth/client';
 
 import { useApollo } from '../lib/apollo';
 import Layout from '../src/components/Layout';
@@ -33,7 +34,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Layout>
-            <Component {...pageProps} />
+            <AuthProvider session={pageProps.session}>
+              <Component {...pageProps} />
+            </AuthProvider>
           </Layout>
         </ThemeProvider>
       </ApolloProvider>
