@@ -20,6 +20,9 @@ const options = {
   legend: {
     display: false,
   },
+  tooltips: {
+    enabled: false,
+  },
 };
 
 export default function RadarChart({ user }: { user: User }) {
