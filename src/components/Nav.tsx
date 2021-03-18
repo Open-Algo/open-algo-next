@@ -150,12 +150,13 @@ export default function Nav() {
             onClose={handleClosePopover}
             anchorEl={anchorEl}
           >
-            <Typography>Hey</Typography>
-            {session ? (
-              <Button onClick={() => signOut()}>Sign Out</Button>
-            ) : (
-              <Button onClick={() => signIn()}>Sign In</Button>
-            )}
+            <Box style={{ backgroundColor: theme.palette.info.main }}>
+              {session ? (
+                <Button onClick={() => signOut()}>Sign Out</Button>
+              ) : (
+                <Button onClick={() => signIn()}>Sign In</Button>
+              )}
+            </Box>
           </Popover>
         </Box>
       </Box>
