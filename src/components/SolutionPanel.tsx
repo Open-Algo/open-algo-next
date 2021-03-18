@@ -15,9 +15,9 @@ import {
   atomOneDark,
   atomOneLight,
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import tagIds from '../../constants/tagIds';
-import timeComplexityIds from '../../constants/timeComplexityIds';
-import spaceComplexityIds from '../../constants/spaceComplexityIds';
+import tagIds from '../../constants/ids/tags';
+import timeComplexityIds from '../../constants/ids/timeComplexities';
+import spaceComplexityIds from '../../constants/ids/spaceComplexities';
 import { Solution, Tag } from '../../types';
 
 export default function SolutionPanel({ solution }: { solution: Solution }) {
