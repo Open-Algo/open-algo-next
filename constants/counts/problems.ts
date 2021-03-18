@@ -1,0 +1,16 @@
+export default {
+  Array: 11,
+  Binary: 5,
+  'Binary Search': 0,
+  'Binary Search Tree': 4,
+  'Binary Tree': 9,
+  'Dynamic Programming': 15,
+  Graph: 8,
+  Heap: 4,
+  Interval: 5,
+  'Linked List': 7,
+  Matrix: 4,
+  Stack: 1,
+  String: 11,
+  Trie: 3,
+};
