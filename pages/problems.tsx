@@ -3,11 +3,17 @@ import { Box, Chip, Paper, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import Link from 'next/link';
 import axios from 'axios';
-import styles from '../styles/problems.module.scss';
+import { useUser } from '../src/context/UserContext';
+import { isProblemSolved } from '../src/helpers';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { Problem } from '../types';
+import styles from '../styles/problems.module.scss';
 
 export default function Problems({ problems }) {
   const theme = useTheme();
+  const { state } = useUser();
 
   return (
     <Box className={styles.root}>
@@ -62,7 +68,27 @@ export default function Problems({ problems }) {
                     }}
                   >
                     <Link href={`/problems/${problem.id}`}>
-                      <a style={{ textDecoration: 'none' }}>
+                      <a
+                        style={{
+                          textDecoration: 'none',
+                          display: 'flex',
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                        }}
+                      >
+                        <FontAwesomeIcon
+                          icon={faCheckCircle}
+                          style={{
+                            color: isProblemSolved({
+                              user: state.user,
+                              problem,
+                            })
+                              ? theme.palette.success.main
+                              : theme.palette.info.light,
+                            marginRight: 5,
+                          }}
+                        />
+
                         <Typography
                           variant="body2"
                           className={styles.problemName}
