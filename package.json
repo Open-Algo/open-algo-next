@@ -17,6 +17,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.3",
     "axios": "^0.21.1",
+    "chart.js": "^2.9.4",
     "graphql": "^15.5.0",
     "mongodb": "^3.6.4",
     "next": "10.0.8",
