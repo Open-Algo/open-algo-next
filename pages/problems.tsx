@@ -1,10 +1,15 @@
 import React from 'react';
-import { Box, Chip, Paper, Typography } from '@material-ui/core';
+import { Box, Paper, Tooltip, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import Link from 'next/link';
 import axios from 'axios';
 import { useUser } from '../src/context/UserContext';
-import { isProblemSolved, hasExplanation, hasSolution } from '../src/helpers';
+import {
+  isProblemSolved,
+  hasExplanation,
+  hasSolution,
+  hasTemplate,
+} from '../src/helpers';
 import { faCheckCircle, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -112,23 +117,60 @@ export default function Problems({ problems }) {
 
                         <Box>
                           {hasSolution({ problem }) ? (
-                            <FontAwesomeIcon
-                              icon={faBookmark}
+                            <Tooltip
+                              title="Has Solution"
                               style={{
-                                color: theme.palette.primary.main,
-                                margin: 2,
+                                display: 'inline',
                               }}
-                            />
+                            >
+                              <Box>
+                                <FontAwesomeIcon
+                                  icon={faBookmark}
+                                  style={{
+                                    color: theme.palette.primary.main,
+                                    margin: 2,
+                                  }}
+                                />
+                              </Box>
+                            </Tooltip>
                           ) : null}
 
                           {hasExplanation({ problem }) ? (
-                            <FontAwesomeIcon
-                              icon={faBookmark}
+                            <Tooltip
+                              title="Has Explanation"
                               style={{
-                                color: theme.palette.primary.dark,
-                                margin: 2,
+                                display: 'inline',
                               }}
-                            />
+                            >
+                              <Box>
+                                <FontAwesomeIcon
+                                  icon={faBookmark}
+                                  style={{
+                                    color: theme.palette.primary.dark,
+                                    margin: 2,
+                                  }}
+                                />
+                              </Box>
+                            </Tooltip>
+                          ) : null}
+
+                          {hasTemplate({ problem }) ? (
+                            <Tooltip
+                              title="Has Template"
+                              style={{
+                                display: 'inline',
+                              }}
+                            >
+                              <Box>
+                                <FontAwesomeIcon
+                                  icon={faBookmark}
+                                  style={{
+                                    color: theme.palette.error.main,
+                                    margin: 2,
+                                  }}
+                                />
+                              </Box>
+                            </Tooltip>
                           ) : null}
                         </Box>
                       </a>
