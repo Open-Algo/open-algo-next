@@ -4,8 +4,8 @@ import { useTheme } from '@material-ui/core/styles';
 import Link from 'next/link';
 import axios from 'axios';
 import { useUser } from '../src/context/UserContext';
-import { isProblemSolved } from '../src/helpers';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { isProblemSolved, hasExplanation, hasSolution } from '../src/helpers';
+import { faCheckCircle, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Problem } from '../types';
@@ -73,33 +73,64 @@ export default function Problems({ problems }) {
                           textDecoration: 'none',
                           display: 'flex',
                           flexDirection: 'row',
-                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          alignItems: 'flex-start',
                         }}
                       >
-                        <FontAwesomeIcon
-                          icon={faCheckCircle}
+                        <Box
                           style={{
-                            color: isProblemSolved({
-                              user: state.user,
-                              problem,
-                            })
-                              ? theme.palette.success.main
-                              : theme.palette.info.light,
-                            marginRight: 5,
-                          }}
-                        />
-
-                        <Typography
-                          variant="body2"
-                          className={styles.problemName}
-                          style={{
-                            color: '#fff',
-                            fontFamily: 'roboto',
-                            fontWeight: 'bold',
+                            display: 'flex',
+                            flexDirection: 'row',
+                            alignItems: 'center',
                           }}
                         >
-                          {problem.name}
-                        </Typography>
+                          <FontAwesomeIcon
+                            icon={faCheckCircle}
+                            style={{
+                              color: isProblemSolved({
+                                user: state.user,
+                                problem,
+                              })
+                                ? theme.palette.success.main
+                                : theme.palette.info.light,
+                              marginRight: 5,
+                            }}
+                          />
+
+                          <Typography
+                            variant="body2"
+                            className={styles.problemName}
+                            style={{
+                              color: '#fff',
+                              fontFamily: 'roboto',
+                              fontWeight: 'bold',
+                            }}
+                          >
+                            {problem.name}
+                          </Typography>
+                        </Box>
+
+                        <Box>
+                          {hasSolution({ problem }) ? (
+                            <FontAwesomeIcon
+                              icon={faBookmark}
+                              style={{
+                                color: theme.palette.primary.main,
+                                margin: 2,
+                              }}
+                            />
+                          ) : null}
+
+                          {hasExplanation({ problem }) ? (
+                            <FontAwesomeIcon
+                              icon={faBookmark}
+                              style={{
+                                color: theme.palette.primary.dark,
+                                margin: 2,
+                              }}
+                            />
+                          ) : null}
+                        </Box>
                       </a>
                     </Link>
                   </Paper>
