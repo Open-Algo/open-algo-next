@@ -1,8 +1,8 @@
 export default [
   'Array',
-  'Binary',
-  'Binary Tree',
   'Binary Search Tree',
+  'Binary Tree',
+  'Binary',
   'Dynamic Programming',
   'Graph',
   'Heap',
