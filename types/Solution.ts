@@ -8,4 +8,5 @@ export default interface Solution {
   problem: string;
   packages: string[];
   explanation: string;
+  templates: string[];
 }
