@@ -14,11 +14,15 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import {
   atomOneDark,
   atomOneLight,
+  dark,
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import ReactMarkdown from 'react-markdown';
 import tagIds from '../../constants/ids/tags';
 import timeComplexityIds from '../../constants/ids/timeComplexities';
 import spaceComplexityIds from '../../constants/ids/spaceComplexities';
 import { Solution, Tag } from '../../types';
+import CodeBlock from './CodeBlock';
+import Text from './Text';
 
 export default function SolutionPanel({ solution }: { solution: Solution }) {
   const handleLearnClick = (tag: string) => (e: React.ChangeEvent) => {
@@ -42,7 +46,15 @@ export default function SolutionPanel({ solution }: { solution: Solution }) {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>{solution.explanation || 'To Do'}</Typography>
+          <Box>
+            <ReactMarkdown
+              source={solution.explanation}
+              renderers={{
+                text: Text,
+                inlineCode: CodeBlock,
+              }}
+            />
+          </Box>
         </AccordionDetails>
       </Accordion>
 
