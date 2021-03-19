@@ -9,4 +9,5 @@ export default interface Problem {
   leetcode: string;
   group: Group;
   solutions: Solution[];
+  description: string;
 }
