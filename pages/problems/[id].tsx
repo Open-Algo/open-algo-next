@@ -170,5 +170,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const res = await fetch(`${process.env.API_URL}/problems/${params.id}`);
   const problem = await res.json();
-  return { props: { problem } };
+  return {
+    props: {
+      problem,
+    },
+    revalidate: 30,
+  };
 }
