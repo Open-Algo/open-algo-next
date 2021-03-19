@@ -1,9 +1,14 @@
+import React from 'react';
 import { Typography } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 
-export default function Text({ variant, fontWeight, content }) {
+export default function Text({ value }) {
   return (
-    <Typography variant={variant} style={{ fontWeight, fontFamily: 'roboto' }}>
-      {content}
+    <Typography
+      variant="body1"
+      style={{ fontFamily: 'roboto', display: 'inline' }}
+    >
+      {value}
     </Typography>
   );
 }
