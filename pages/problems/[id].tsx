@@ -48,15 +48,16 @@ function a11yProps(index: any) {
 
 export default function Problem({ problem }: { problem: ProblemInterface }) {
   const theme = useTheme();
+  const [isSolved, setIsSolved] = useState(false);
 
   const [value, setValue] = useState(0);
-
   const { state, dispatch } = useUser();
 
   const [addProblem] = useMutation<{ addProblem: User }>(ADD_PROBLEM, {
     onCompleted({ addProblem }) {
       const user = addProblem;
       dispatch({ type: 'update', user });
+      setIsSolved(true);
     },
   });
 
@@ -96,9 +97,10 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
               icon={faCheckCircle}
               size="lg"
               style={{
-                color: isProblemSolved({ user: state.user, problem })
-                  ? theme.palette.success.main
-                  : theme.palette.info.light,
+                color:
+                  isSolved || isProblemSolved({ user: state.user, problem })
+                    ? theme.palette.success.main
+                    : theme.palette.info.light,
               }}
             />
           </Button>
