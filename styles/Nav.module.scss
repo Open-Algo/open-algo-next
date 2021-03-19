@@ -15,6 +15,12 @@
 
 .leftBox {
   display: flex;
+  flex-direction: column;
+
+}
+
+.leftBox__topBox {
+  display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;

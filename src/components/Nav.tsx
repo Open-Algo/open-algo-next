@@ -68,52 +68,83 @@ export default function Nav() {
     <nav>
       <Box className={styles.root}>
         <Box className={styles.leftBox}>
-          <Box className={styles.logoBox}>
-            <Link href="/">
-              <a className={styles.logoAnchor}>
-                <Image
-                  src="/open_algo.png"
-                  alt="Open Algo"
-                  width={80}
-                  height={80}
-                />
+          <Box className={styles.leftBox__topBox}>
+            <Box className={styles.logoBox}>
+              <Link href="/">
+                <a className={styles.logoAnchor}>
+                  <Image
+                    src="/open_algo.png"
+                    alt="Open Algo"
+                    width={80}
+                    height={80}
+                  />
+                </a>
+              </Link>
+            </Box>
+            <Box
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                marginLeft: 10,
+              }}
+            >
+              <Box className={styles.linksBox}>
+                <Box className={styles.linkBox}>
+                  <Link href="/">
+                    <a className={styles.linkAnchor}>
+                      <Typography
+                        variant="h6"
+                        className={styles.title}
+                        style={{
+                          fontWeight: 'bold',
+                          color: theme.palette.primary.main,
+                        }}
+                      >
+                        Open Algo
+                      </Typography>
+                    </a>
+                  </Link>
+                </Box>
+                <Box className={styles.linkBox}>
+                  <Link href="/problems">
+                    <a className={styles.linkAnchor}>
+                      <Typography className={styles.linkText}>
+                        Problems
+                      </Typography>
+                    </a>
+                  </Link>
+                </Box>
+
+                <Box className={styles.linkBox}>
+                  <Link href="/learn">
+                    <a className={styles.linkAnchor}>
+                      <Typography className={styles.linkText}>Learn</Typography>
+                    </a>
+                  </Link>
+                </Box>
+
+                <Box className={styles.linkBox}>
+                  <Link href="/patterns">
+                    <a className={styles.linkAnchor}>
+                      <Typography className={styles.linkText}>
+                        Patterns
+                      </Typography>
+                    </a>
+                  </Link>
+                </Box>
+              </Box>
+              <Box className={styles.leftBox__bottomBox}>
                 <Typography
-                  variant="h6"
-                  className={styles.title}
+                  variant="caption"
                   style={{
-                    fontWeight: 'bold',
-                    color: theme.palette.primary.main,
+                    color: theme.palette.secondary.light,
+                    fontStyle: 'italic',
                   }}
                 >
-                  Open Algo
+                  DSA First Principles. As Simple As Possible, Free Forever
                 </Typography>
-              </a>
-            </Link>
-          </Box>
-
-          <Box className={styles.linksBox}>
-            <Box className={styles.linkBox}>
-              <Link href="/problems">
-                <a className={styles.linkAnchor}>
-                  <Typography className={styles.linkText}>Problems</Typography>
-                </a>
-              </Link>
-            </Box>
-
-            <Box className={styles.linkBox}>
-              <Link href="/learn">
-                <a className={styles.linkAnchor}>
-                  <Typography className={styles.linkText}>Learn</Typography>
-                </a>
-              </Link>
-            </Box>
-
-            <Box className={styles.linkBox}>
-              <Link href="/patterns">
-                <a className={styles.linkAnchor}>
-                  <Typography className={styles.linkText}>Patterns</Typography>
-                </a>
-              </Link>
+              </Box>
             </Box>
           </Box>
         </Box>
