@@ -126,6 +126,7 @@ export default function Problems({ problems }) {
                               <Box>
                                 <FontAwesomeIcon
                                   icon={faBookmark}
+                                  size="xs"
                                   style={{
                                     color: theme.palette.primary.main,
                                     margin: 2,
@@ -145,6 +146,7 @@ export default function Problems({ problems }) {
                               <Box>
                                 <FontAwesomeIcon
                                   icon={faBookmark}
+                                  size="xs"
                                   style={{
                                     color: theme.palette.primary.dark,
                                     margin: 2,
@@ -164,6 +166,7 @@ export default function Problems({ problems }) {
                               <Box>
                                 <FontAwesomeIcon
                                   icon={faBookmark}
+                                  size="xs"
                                   style={{
                                     color: theme.palette.error.main,
                                     margin: 2,
