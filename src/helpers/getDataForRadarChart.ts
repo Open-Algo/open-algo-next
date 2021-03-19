@@ -11,7 +11,7 @@ export default function getDataForRadarChart({ user }: { user: User }) {
         backgroundColor: theme.palette.primary.main,
         borderColor: theme.palette.primary.main,
         pointBackgroundColor: theme.palette.info.main,
-        pointBorderColor: theme.palette.info.main,
+        pointBorderColor: theme.palette.secondary.main,
         pointHoverBackgroundColor: theme.palette.secondary.light,
         pointHoverBorderColor: theme.palette.info.light,
         data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
