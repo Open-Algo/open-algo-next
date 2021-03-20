@@ -113,7 +113,12 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
 
         <Chip
           label={problem.difficulty ? toTitleCase(problem.difficulty) : 'Other'}
-          style={{ backgroundColor: theme.palette.primary.main, margin: 2 }}
+          style={{
+            backgroundColor: problem.difficulty
+              ? theme.difficulty[problem.difficulty].main
+              : theme.difficulty.very_hard.main,
+            margin: 2,
+          }}
         />
       </Box>
 
