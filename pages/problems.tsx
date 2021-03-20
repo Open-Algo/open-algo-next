@@ -13,6 +13,7 @@ import {
 import { faCheckCircle, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import ProgressBar from '../src/components/ProgressBar';
 import { Problem } from '../types';
 import styles from '../styles/problems.module.scss';
 
@@ -23,6 +24,9 @@ export default function Problems({ problems }) {
   return (
     <Box className={styles.root}>
       <Box>
+        <Box style={{ paddingLeft: 25, margin: 5, paddingTop: 10 }}>
+          <ProgressBar user={state.user} problems={problems} />
+        </Box>
         <Box
           style={{
             display: 'flex',
