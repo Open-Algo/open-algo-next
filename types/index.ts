@@ -8,3 +8,4 @@ export type { default as Tag } from './Tag';
 export type { default as Token } from './Token';
 export type { default as User } from './User';
 export type { default as Problems } from './Problems';
+export type { default as Video } from './Video';
