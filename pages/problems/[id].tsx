@@ -160,7 +160,7 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
         .sort((a, b) => (a.title > b.title ? 1 : -1))
         .map((solution, idx) => (
           <TabPanel value={value} index={idx}>
-            <SolutionPanel solution={solution} />
+            <SolutionPanel solution={solution} videos={problem.videos} />
           </TabPanel>
         ))}
     </Box>

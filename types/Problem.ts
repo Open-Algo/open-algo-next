@@ -1,5 +1,6 @@
 import Solution from './Solution';
 import Group from './Group';
+import Video from './Video';
 
 export default interface Problem {
   id: string;
@@ -10,4 +11,5 @@ export default interface Problem {
   group: Group;
   solutions: Solution[];
   description: string;
+  videos: Video[];
 }
