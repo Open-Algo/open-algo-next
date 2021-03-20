@@ -164,9 +164,9 @@ export default function SolutionPanel({
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          {videos.map((video) => (
-            <YouTube videoId={video.youtubeId} />
-          ))}
+          {videos
+            ? videos.map((video) => <YouTube videoId={video.youtubeId} />)
+            : null}
         </AccordionDetails>
       </Accordion>
     </Box>
