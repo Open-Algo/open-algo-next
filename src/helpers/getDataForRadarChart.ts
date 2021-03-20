@@ -8,8 +8,8 @@ export default function getDataForRadarChart({ user }: { user: User }) {
     labels: PROBLEMS,
     datasets: [
       {
-        backgroundColor: theme.palette.primary.main,
-        borderColor: theme.palette.primary.main,
+        backgroundColor: theme.palette.success.main,
+        borderColor: theme.palette.success.main,
         pointBackgroundColor: theme.palette.info.main,
         pointBorderColor: theme.palette.secondary.main,
         pointHoverBackgroundColor: theme.palette.secondary.light,
