@@ -17,14 +17,22 @@ import {
   dark,
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import ReactMarkdown from 'react-markdown';
+import YouTube from 'react-youtube';
+
 import tagIds from '../../constants/ids/tags';
 import timeComplexityIds from '../../constants/ids/timeComplexities';
 import spaceComplexityIds from '../../constants/ids/spaceComplexities';
-import { Solution, Tag } from '../../types';
+import { Solution, Video } from '../../types';
 import CodeBlock from './CodeBlock';
 import Text from './Text';
 
-export default function SolutionPanel({ solution }: { solution: Solution }) {
+export default function SolutionPanel({
+  solution,
+  videos,
+}: {
+  solution: Solution;
+  videos: Video[];
+}) {
   const handleLearnClick = (tag: string) => (e: React.ChangeEvent) => {
     console.log(tag);
   };
@@ -140,6 +148,25 @@ export default function SolutionPanel({ solution }: { solution: Solution }) {
               />
             ))}
           </Box>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion
+        style={{ backgroundColor: theme.palette.info.main }}
+        defaultExpanded={true}
+      >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography
+            variant="body1"
+            style={{ fontWeight: 'bold', color: theme.palette.secondary.main }}
+          >
+            Videos
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          {videos.map((video) => (
+            <YouTube videoId={video.youtubeId} />
+          ))}
         </AccordionDetails>
       </Accordion>
     </Box>
