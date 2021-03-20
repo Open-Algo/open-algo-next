@@ -9,4 +9,5 @@ export default {
   '6054c4fc9ea7b1f69684a7fa': 'O(2^n)',
   '6054c4fd9ea7b1f69684a7fb': 'O(n!)',
   '6054c4fd9ea7b1f69684a7fc': 'O(mn * min(m, n))',
+  '60561184002d10f8b84f6f57': 'O(m)',
 };
