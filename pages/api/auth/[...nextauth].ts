@@ -13,6 +13,10 @@ const options = {
       clientId: process.env.NEXT_PUBLIC_FACEBOOK_CLIENT_ID,
       clientSecret: process.env.NEXT_PUBLIC_FACEBOOK_CLIENT_SECRET,
     }),
+    Providers.GitHub({
+      clientId: process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID,
+      clientSecret: process.env.NEXT_PUBLIC_GITHUB_CLIENT_SECRET,
+    }),
   ],
   database: process.env.NEXT_PUBLIC_DATABASE_URL,
   pages: {
