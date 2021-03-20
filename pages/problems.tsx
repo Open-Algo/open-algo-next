@@ -9,8 +9,16 @@ import {
   hasExplanation,
   hasSolution,
   hasTemplate,
+  hasVideo,
 } from '../src/helpers';
-import { faCheckCircle, faBookmark } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCheckCircle,
+  faBookmark,
+  faStickyNote,
+  faCode,
+  faPuzzlePiece,
+  faVideo,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import ProgressBar from '../src/components/ProgressBar';
@@ -91,6 +99,7 @@ export default function Problems({ problems }) {
                             display: 'flex',
                             flexDirection: 'row',
                             alignItems: 'center',
+                            justifyContent: 'flex-start',
                           }}
                         >
                           <FontAwesomeIcon
@@ -119,7 +128,14 @@ export default function Problems({ problems }) {
                           </Typography>
                         </Box>
 
-                        <Box>
+                        <Box
+                          style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            justifyContent: 'flex-start',
+                          }}
+                        >
                           {hasSolution({ problem }) ? (
                             <Tooltip
                               title="Has Solution"
@@ -129,10 +145,10 @@ export default function Problems({ problems }) {
                             >
                               <Box>
                                 <FontAwesomeIcon
-                                  icon={faBookmark}
-                                  size="xs"
+                                  icon={faCode}
+                                  size="sm"
                                   style={{
-                                    color: theme.palette.primary.main,
+                                    color: '#9047FF',
                                     margin: 2,
                                   }}
                                 />
@@ -149,10 +165,10 @@ export default function Problems({ problems }) {
                             >
                               <Box>
                                 <FontAwesomeIcon
-                                  icon={faBookmark}
-                                  size="xs"
+                                  icon={faStickyNote}
+                                  size="sm"
                                   style={{
-                                    color: theme.palette.primary.dark,
+                                    color: '#ff80ab',
                                     margin: 2,
                                   }}
                                 />
@@ -169,10 +185,30 @@ export default function Problems({ problems }) {
                             >
                               <Box>
                                 <FontAwesomeIcon
-                                  icon={faBookmark}
-                                  size="xs"
+                                  icon={faPuzzlePiece}
+                                  size="sm"
                                   style={{
-                                    color: theme.palette.error.main,
+                                    color: theme.palette.primary.main,
+                                    margin: 2,
+                                  }}
+                                />
+                              </Box>
+                            </Tooltip>
+                          ) : null}
+
+                          {hasVideo({ problem }) ? (
+                            <Tooltip
+                              title="Has Video"
+                              style={{
+                                display: 'inline',
+                              }}
+                            >
+                              <Box>
+                                <FontAwesomeIcon
+                                  icon={faVideo}
+                                  size="sm"
+                                  style={{
+                                    color: '#DF9F2F',
                                     margin: 2,
                                   }}
                                 />
