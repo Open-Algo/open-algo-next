@@ -1,4 +1,6 @@
 export default {
+  '6056178f002d10f8b84f6f5b': 'Max Heap',
+  '605617b9002d10f8b84f6f5c': 'Min Heap',
   '604cd047fe14f5345d9b8d84': 'Dijkstra',
   '604cd048fe14f5345d9b8d85': 'Knuth-Morris-Pratt',
   '604cd048fe14f5345d9b8d86': 'Kadane',
