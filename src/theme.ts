@@ -7,11 +7,23 @@ declare module '@material-ui/core/styles/createMuiTheme' {
       background: React.CSSProperties['color'];
       text: React.CSSProperties['color'];
     };
+    difficulty: {
+      easy: { main: React.CSSProperties['color'] };
+      medium: { main: React.CSSProperties['color'] };
+      hard: { main: React.CSSProperties['color'] };
+      very_hard: { main: React.CSSProperties['color'] };
+    };
   }
   interface ThemeOptions {
     code: {
       background: React.CSSProperties['color'];
       text: React.CSSProperties['color'];
+    };
+    difficulty: {
+      easy: { main: React.CSSProperties['color'] };
+      medium: { main: React.CSSProperties['color'] };
+      hard: { main: React.CSSProperties['color'] };
+      very_hard: { main: React.CSSProperties['color'] };
     };
   }
 }
@@ -43,6 +55,20 @@ const theme = createMuiTheme({
   code: {
     background: '#FAFAFA',
     text: red.A400,
+  },
+  difficulty: {
+    easy: {
+      main: '#3CD75F',
+    },
+    medium: {
+      main: '#1B91DA',
+    },
+    hard: {
+      main: red.A400,
+    },
+    very_hard: {
+      main: '#282828',
+    },
   },
 });
 
