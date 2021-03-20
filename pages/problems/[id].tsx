@@ -131,29 +131,33 @@ export default function Problem({ problem }: { problem: ProblemInterface }) {
             style: { background: theme.palette.primary.main },
           }}
         >
-          {problem.solutions.map((solution: Solution, idx: number) => (
-            <Tab
-              label={
-                <Typography
-                  style={{
-                    color: theme.palette.primary.main,
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {solution.title}
-                </Typography>
-              }
-              {...a11yProps(idx)}
-            />
-          ))}
+          {problem.solutions
+            .sort((a, b) => (a.title > b.title ? 1 : -1))
+            .map((solution: Solution, idx: number) => (
+              <Tab
+                label={
+                  <Typography
+                    style={{
+                      color: theme.palette.primary.main,
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    {solution.title}
+                  </Typography>
+                }
+                {...a11yProps(idx)}
+              />
+            ))}
         </Tabs>
       </AppBar>
 
-      {problem.solutions.map((solution, idx) => (
-        <TabPanel value={value} index={idx}>
-          <SolutionPanel solution={solution} />
-        </TabPanel>
-      ))}
+      {problem.solutions
+        .sort((a, b) => (a.title > b.title ? 1 : -1))
+        .map((solution, idx) => (
+          <TabPanel value={value} index={idx}>
+            <SolutionPanel solution={solution} />
+          </TabPanel>
+        ))}
     </Box>
   );
 }
