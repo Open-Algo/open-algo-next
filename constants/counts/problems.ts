@@ -10,7 +10,7 @@ export default {
   Interval: 5,
   'Linked List': 7,
   Matrix: 4,
-  Stack: 1,
-  String: 11,
+  Stack: 2,
+  String: 10,
   Trie: 3,
 };
