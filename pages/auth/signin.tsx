@@ -20,32 +20,51 @@ export default function SignIn({ providers }) {
           backgroundColor: theme.palette.info.main,
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
-          padding: 20,
+          justifyContent: 'space-between',
+          padding: 30,
         }}
       >
-        {Object.values(providers).map((provider: Provider) => (
-          <Box key={provider.name}>
-            <Button
-              variant="contained"
-              onClick={() => signIn(provider.id)}
-              className={styles.button}
-              style={{ backgroundColor: 'white' }}
-              fullWidth
-            >
-              <Image
-                src={`/${provider.name}.png`}
-                height={20}
-                width={20}
-                alt={provider.name}
-              />
-              <Typography
-                variant="body1"
-                style={{ marginLeft: 5 }}
-              >{`Continue with ${provider.name}`}</Typography>
-            </Button>
-          </Box>
-        ))}
+        <Box
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            marginTop: 10,
+            marginBottom: 20,
+          }}
+        >
+          <Image
+            src={'/open_algo.png'}
+            height={175}
+            width={175}
+            alt="Open Algo"
+          />
+        </Box>
+
+        <Box>
+          {Object.values(providers).map((provider: Provider) => (
+            <Box key={provider.name} style={{ margin: 5 }}>
+              <Button
+                variant="contained"
+                onClick={() => signIn(provider.id)}
+                className={styles.button}
+                style={{ backgroundColor: 'white' }}
+                fullWidth
+              >
+                <Image
+                  src={`/${provider.name}.png`}
+                  height={20}
+                  width={20}
+                  alt={provider.name}
+                />
+                <Typography
+                  variant="body1"
+                  style={{ marginLeft: 5 }}
+                >{`Continue with ${provider.name}`}</Typography>
+              </Button>
+            </Box>
+          ))}
+        </Box>
       </Paper>
     </Box>
   );
