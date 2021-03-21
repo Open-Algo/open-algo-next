@@ -240,6 +240,7 @@ export async function getStaticProps() {
     'Binary Tree': [],
     'Dynamic Programming': [],
     Graph: [],
+    'Hash Table': [],
     Heap: [],
     Interval: [],
     'Linked List': [],
