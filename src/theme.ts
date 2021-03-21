@@ -13,6 +13,12 @@ declare module '@material-ui/core/styles/createMuiTheme' {
       hard: { main: React.CSSProperties['color'] };
       very_hard: { main: React.CSSProperties['color'] };
     };
+    solution: {
+      solution: { main: React.CSSProperties['color'] };
+      explanation: { main: React.CSSProperties['color'] };
+      template: { main: React.CSSProperties['color'] };
+      video: { main: React.CSSProperties['color'] };
+    };
   }
   interface ThemeOptions {
     code: {
@@ -24,6 +30,12 @@ declare module '@material-ui/core/styles/createMuiTheme' {
       medium: { main: React.CSSProperties['color'] };
       hard: { main: React.CSSProperties['color'] };
       very_hard: { main: React.CSSProperties['color'] };
+    };
+    solution: {
+      solution: { main: React.CSSProperties['color'] };
+      explanation: { main: React.CSSProperties['color'] };
+      template: { main: React.CSSProperties['color'] };
+      video: { main: React.CSSProperties['color'] };
     };
   }
 }
@@ -68,6 +80,20 @@ const theme = createMuiTheme({
     },
     very_hard: {
       main: '#282828',
+    },
+  },
+  solution: {
+    solution: {
+      main: '#0075ca',
+    },
+    explanation: {
+      main: '#7057ff',
+    },
+    template: {
+      main: '#a2eeef',
+    },
+    video: {
+      main: '#F90201',
     },
   },
 });
