@@ -65,4 +65,7 @@ export default {
   '604cd05bfe14f5345d9b8dc1': 'Dynamic Programming',
   '6057542bd5449a77c1b955af': 'Cycle Detection',
   '60575398d5449a77c1b955ae': "Floyd's Cycle-Finding Algorithm",
+  '6057a3a6a6247d091d66c2da': 'Inorder',
+  '6057a3b8a6247d091d66c2db': 'Postorder',
+  '6057a3c1a6247d091d66c2dc': 'Preorder',
 };
