@@ -8,8 +8,12 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>Open Algo</title>
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta
+            name="image"
+            property="og:image"
+            content="https://s3-us-west-1.amazonaws.com/matt.ramotar/OpenAlgo.png"
+          />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700&display=swap"
