@@ -63,4 +63,6 @@ export default {
   '604cd05afe14f5345d9b8dbf': 'Backtracking',
   '604cd05afe14f5345d9b8dc0': 'Max Sequence',
   '604cd05bfe14f5345d9b8dc1': 'Dynamic Programming',
+  '6057542bd5449a77c1b955af': 'Cycle Detection',
+  '60575398d5449a77c1b955ae': "Floyd's Cycle-Finding Algorithm",
 };
