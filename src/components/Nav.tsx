@@ -5,7 +5,11 @@ import axios from 'axios';
 import { useSession, signIn, signOut } from 'next-auth/client';
 import { Box, Button, Popover, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
-import { faBell, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBell,
+  faUserCircle,
+  faShapes,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { useUser } from '../context/UserContext';
@@ -142,7 +146,25 @@ export default function Nav() {
                     fontStyle: 'italic',
                   }}
                 >
-                  DSA First Principles. As Simple As Possible, Free Forever
+                  DSA First Principles
+                </Typography>
+                <FontAwesomeIcon
+                  icon={faShapes}
+                  size="sm"
+                  style={{
+                    color: theme.solution.template.main,
+                    marginLeft: 5,
+                    marginRight: 5,
+                  }}
+                />
+                <Typography
+                  variant="caption"
+                  style={{
+                    color: theme.palette.secondary.light,
+                    fontStyle: 'italic',
+                  }}
+                >
+                  As Simple As Possible, Free Forever
                 </Typography>
               </Box>
             </Box>
