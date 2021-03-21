@@ -94,7 +94,7 @@ export default function Nav() {
                   <Link href="/">
                     <a className={styles.linkAnchor}>
                       <Typography
-                        variant="h6"
+                        variant="h5"
                         className={styles.title}
                         style={{
                           fontWeight: 'bold',

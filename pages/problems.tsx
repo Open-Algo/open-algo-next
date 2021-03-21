@@ -13,12 +13,12 @@ import {
 } from '../src/helpers';
 import {
   faCheckCircle,
-  faBookmark,
-  faStickyNote,
-  faCode,
-  faPuzzlePiece,
-  faVideo,
+  faBookOpen,
+  faShapes,
 } from '@fortawesome/free-solid-svg-icons';
+
+import { faPython, faYoutube } from '@fortawesome/free-brands-svg-icons';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import ProgressBar from '../src/components/ProgressBar';
@@ -119,7 +119,7 @@ export default function Problems({ problems }) {
                             variant="body2"
                             className={styles.problemName}
                             style={{
-                              color: '#fff',
+                              color: theme.palette.secondary.light,
                               fontFamily: 'roboto',
                               fontWeight: 'bold',
                             }}
@@ -145,10 +145,9 @@ export default function Problems({ problems }) {
                             >
                               <Box>
                                 <FontAwesomeIcon
-                                  icon={faCode}
-                                  size="sm"
+                                  icon={faPython}
                                   style={{
-                                    color: '#9047FF',
+                                    color: theme.solution.solution.main,
                                     margin: 2,
                                   }}
                                 />
@@ -165,10 +164,9 @@ export default function Problems({ problems }) {
                             >
                               <Box>
                                 <FontAwesomeIcon
-                                  icon={faStickyNote}
-                                  size="sm"
+                                  icon={faBookOpen}
                                   style={{
-                                    color: '#ff80ab',
+                                    color: theme.solution.explanation.main,
                                     margin: 2,
                                   }}
                                 />
@@ -185,10 +183,9 @@ export default function Problems({ problems }) {
                             >
                               <Box>
                                 <FontAwesomeIcon
-                                  icon={faPuzzlePiece}
-                                  size="sm"
+                                  icon={faShapes}
                                   style={{
-                                    color: theme.palette.primary.main,
+                                    color: theme.solution.template.main,
                                     margin: 2,
                                   }}
                                 />
@@ -205,10 +202,9 @@ export default function Problems({ problems }) {
                             >
                               <Box>
                                 <FontAwesomeIcon
-                                  icon={faVideo}
-                                  size="sm"
+                                  icon={faYoutube}
                                   style={{
-                                    color: '#DF9F2F',
+                                    color: theme.palette.error.main,
                                     margin: 2,
                                   }}
                                 />
