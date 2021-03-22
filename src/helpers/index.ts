@@ -7,3 +7,4 @@ export { default as hasTemplate } from './hasTemplate';
 export { default as hasVideo } from './hasVideo';
 export { default as getCountSolvedProblems } from './getCountSolvedProblems';
 export { default as getCountProblems } from './getCountProblems';
+export { default as hasDiagram } from './hasDiagram';
