@@ -9,6 +9,8 @@ import {
   Paper,
   Typography,
 } from '@material-ui/core';
+import Carousel from 'react-material-ui-carousel';
+
 import { useTheme } from '@material-ui/core/styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -80,16 +82,18 @@ export default function SolutionPanel({
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          {solution.diagrams.length > 0
-            ? solution.diagrams.map((diagram) => (
+          {solution.diagrams.length > 0 ? (
+            <Carousel>
+              {solution.diagrams.map((diagram) => (
                 <Image
                   src={diagram.url}
-                  height={200}
-                  width={333}
+                  height={diagram.height / 4}
+                  width={diagram.width / 4}
                   alt={diagram.alternativeText}
                 />
-              ))
-            : null}
+              ))}
+            </Carousel>
+          ) : null}
         </AccordionDetails>
       </Accordion>
 
