@@ -86,7 +86,7 @@ export default function SolutionPanel({
                   src={diagram.url}
                   height={200}
                   width={333}
-                  alt={diagram.title}
+                  alt={diagram.alternativeText}
                 />
               ))
             : null}
