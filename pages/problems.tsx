@@ -10,11 +10,14 @@ import {
   hasSolution,
   hasTemplate,
   hasVideo,
+  hasDiagram,
 } from '../src/helpers';
 import {
   faCheckCircle,
   faBookOpen,
   faShapes,
+  faChalkboard,
+  faProjectDiagram,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faPython, faYoutube } from '@fortawesome/free-brands-svg-icons';
@@ -205,6 +208,25 @@ export default function Problems({ problems }) {
                                   icon={faYoutube}
                                   style={{
                                     color: theme.palette.error.main,
+                                    margin: 2,
+                                  }}
+                                />
+                              </Box>
+                            </Tooltip>
+                          ) : null}
+
+                          {hasDiagram({ problem }) ? (
+                            <Tooltip
+                              title="Has Diagram"
+                              style={{
+                                display: 'inline',
+                              }}
+                            >
+                              <Box>
+                                <FontAwesomeIcon
+                                  icon={faProjectDiagram}
+                                  style={{
+                                    color: '#cfd3d7',
                                     margin: 2,
                                   }}
                                 />

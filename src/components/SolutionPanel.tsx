@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import {
   Accordion,
   AccordionSummary,
@@ -63,6 +64,32 @@ export default function SolutionPanel({
               }}
             />
           </Box>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion
+        style={{ backgroundColor: theme.palette.info.main }}
+        defaultExpanded={true}
+      >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography
+            variant="body1"
+            style={{ fontWeight: 'bold', color: theme.palette.secondary.main }}
+          >
+            Diagrams
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          {solution.diagrams.length > 0
+            ? solution.diagrams.map((diagram) => (
+                <Image
+                  src={diagram.url}
+                  height={200}
+                  width={333}
+                  alt={diagram.title}
+                />
+              ))
+            : null}
         </AccordionDetails>
       </Accordion>
 
