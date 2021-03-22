@@ -1,3 +1,4 @@
+import Diagram from './Diagram';
 export default interface Solution {
   title: string;
   time_complexity: string;
@@ -9,4 +10,5 @@ export default interface Solution {
   packages: string[];
   explanation: string;
   templates: string[];
+  diagrams: Diagram[];
 }

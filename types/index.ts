@@ -9,3 +9,4 @@ export type { default as Token } from './Token';
 export type { default as User } from './User';
 export type { default as Problems } from './Problems';
 export type { default as Video } from './Video';
+export type { default as Diagram } from './Diagram';
