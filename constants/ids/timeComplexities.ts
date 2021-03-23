@@ -11,4 +11,5 @@ export default {
   '6054c65c6d1e16f739772eb3': 'O(mn * min(m, n))',
   '60552dcd002d10f8b84f6f4c': 'O(n^3)',
   '60561114002d10f8b84f6f56': 'O(n + m)',
+  '605a03d2a48f9534ed284491': 'O(n * 3^l)',
 };
