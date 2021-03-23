@@ -10,8 +10,8 @@ export default {
   Heap: 4,
   Interval: 5,
   'Linked List': 7,
-  Matrix: 5,
+  Matrix: 4,
   Stack: 2,
   String: 10,
-  Trie: 4,
+  Trie: 5,
 };
