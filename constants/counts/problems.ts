@@ -3,7 +3,7 @@ export default {
   Binary: 5,
   'Binary Search': 1,
   'Binary Search Tree': 4,
-  'Binary Tree': 9,
+  'Binary Tree': 8,
   'Dynamic Programming': 15,
   Graph: 8,
   'Hash Table': 2,
@@ -13,5 +13,5 @@ export default {
   Matrix: 4,
   Stack: 2,
   String: 10,
-  Trie: 3,
+  Trie: 4,
 };
