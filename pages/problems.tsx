@@ -282,6 +282,6 @@ export async function getStaticProps() {
     props: {
       problems,
     },
-    revalidate: 30,
+    revalidate: 1,
   };
 }
