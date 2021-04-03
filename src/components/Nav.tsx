@@ -146,25 +146,7 @@ export default function Nav() {
                     fontStyle: 'italic',
                   }}
                 >
-                  DSA First Principles
-                </Typography>
-                <FontAwesomeIcon
-                  icon={faShapes}
-                  size="sm"
-                  style={{
-                    color: theme.solution.template.main,
-                    marginLeft: 5,
-                    marginRight: 5,
-                  }}
-                />
-                <Typography
-                  variant="caption"
-                  style={{
-                    color: theme.palette.secondary.light,
-                    fontStyle: 'italic',
-                  }}
-                >
-                  As Simple As Possible, Free Forever
+                  DSA First Principles. As simple as possible. Free forever!
                 </Typography>
               </Box>
             </Box>
