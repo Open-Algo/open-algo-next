@@ -1,3 +1,5 @@
+@use './theme' as t;
+
 .root--background {
   background-image: url('../public/background.jpg');
   background-size: cover;

@@ -1,3 +1,5 @@
+@use './theme' as t;
+
 .root {
   display: flex;
   flex-direction: row;
