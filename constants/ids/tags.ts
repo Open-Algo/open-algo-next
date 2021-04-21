@@ -69,4 +69,6 @@ export default {
   '6057a3b8a6247d091d66c2db': 'Postorder',
   '6057a3c1a6247d091d66c2dc': 'Preorder',
   '6068eb78629c561a727d341d': 'Bijection',
+  '6080977721457f7881c6d301': 'Indegree',
+  '6080978121457f7881c6d302': 'Outdegree',
 };
