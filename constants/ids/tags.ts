@@ -71,4 +71,5 @@ export default {
   '6068eb78629c561a727d341d': 'Bijection',
   '6080977721457f7881c6d301': 'Indegree',
   '6080978121457f7881c6d302': 'Outdegree',
+  '6081f4b8833f9363f77acb53': 'Hash Set',
 };
