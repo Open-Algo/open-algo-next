@@ -14,4 +14,5 @@ export default [
   'Stack',
   'String',
   'Trie',
+  'Tree'
 ];

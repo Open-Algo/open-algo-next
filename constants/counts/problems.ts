@@ -14,4 +14,5 @@ export default {
   Stack: 2,
   String: 10,
   Trie: 5,
+  Tree: 1,
 };
