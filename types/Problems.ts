@@ -13,5 +13,6 @@ export default interface Problems {
   Matrix: Problem[];
   Stack: Problem[];
   String: Problem[];
+  Tree: Problem[];
   Trie: Problem[];
 }

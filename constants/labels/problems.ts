@@ -13,6 +13,6 @@ export default [
   'Matrix',
   'Stack',
   'String',
+  'Tree',
   'Trie',
-  'Tree'
 ];

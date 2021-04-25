@@ -269,8 +269,8 @@ export async function getStaticProps() {
     Matrix: [],
     Stack: [],
     String: [],
+    Tree: [],
     Trie: [],
-    Tree: []
   };
 
   for (const problem of data) {
