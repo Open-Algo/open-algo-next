@@ -72,4 +72,6 @@ export default {
   '6080977721457f7881c6d301': 'Indegree',
   '6080978121457f7881c6d302': 'Outdegree',
   '6081f4b8833f9363f77acb53': 'Hash Set',
+  '6085dc36e11d724e1de53684': 'Prim',
+  '6085dc16e11d724e1de53683': 'Kruskal'
 };
