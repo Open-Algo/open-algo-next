@@ -4,7 +4,7 @@ export default {
   'Binary Search': 1,
   'Binary Search Tree': 4,
   'Binary Tree': 8,
-  'Dynamic Programming': 14,
+  'Dynamic Programming': 15,
   Graph: 8,
   'Hash Table': 2,
   Heap: 4,
