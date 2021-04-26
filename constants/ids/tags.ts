@@ -74,5 +74,6 @@ export default {
   '6081f4b8833f9363f77acb53': 'Hash Set',
   '6085dc36e11d724e1de53684': "Prim's Algorithm",
   '6085dc16e11d724e1de53683': "Kruskal's Algorithm",
-  '608605f96b8084587080ec3b': 'Minimum Spanning Tree'
+  '608605f96b8084587080ec3b': 'Minimum Spanning Tree',
+  '60869db56b8084587080ec3c': 'Minimax'
 };
