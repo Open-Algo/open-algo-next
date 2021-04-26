@@ -1,9 +1,9 @@
 export default {
   '6056178f002d10f8b84f6f5b': 'Max Heap',
   '605617b9002d10f8b84f6f5c': 'Min Heap',
-  '604cd047fe14f5345d9b8d84': 'Dijkstra',
+  '604cd047fe14f5345d9b8d84': "Dijkstra's Algorithm",
   '604cd048fe14f5345d9b8d85': 'Knuth-Morris-Pratt',
-  '604cd048fe14f5345d9b8d86': 'Kadane',
+  '604cd048fe14f5345d9b8d86': "Kadane's Algorithm",
   '604cd048fe14f5345d9b8d87': 'Topological Sort',
   '604cd048fe14f5345d9b8d88': 'Binary',
   '604cd049fe14f5345d9b8d89': 'Bits',
@@ -72,7 +72,7 @@ export default {
   '6080977721457f7881c6d301': 'Indegree',
   '6080978121457f7881c6d302': 'Outdegree',
   '6081f4b8833f9363f77acb53': 'Hash Set',
-  '6085dc36e11d724e1de53684': 'Prim',
-  '6085dc16e11d724e1de53683': 'Kruskal',
+  '6085dc36e11d724e1de53684': "Prim's Algorithm",
+  '6085dc16e11d724e1de53683': "Kruskal's Algorithm",
   '608605f96b8084587080ec3b': 'Minimum Spanning Tree'
 };
